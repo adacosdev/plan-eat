@@ -1,5 +1,14 @@
 # Planeat 🥗
 
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Turborepo](https://img.shields.io/badge/turborepo-EF4444?style=for-the-badge&logo=turborepo&logoColor=white)
+![pnpm](https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220)
+
 **Planeat** es una plataforma integral de planificación de comidas diseñada para ayudar a las personas a comer mejor, ahorrar dinero y reducir el desperdicio de alimentos mediante la gestión inteligente de recetas y presupuestos.
 
 ## 🎯 Objetivo del Proyecto
@@ -35,10 +44,3 @@ Este proyecto utiliza un **Monorepo** gestionado con **Turborepo** y **pnpm work
 1. **Instalación**: `pnpm install`
 2. **Base de Datos**: `cd packages/database && pnpm db:generate` y asegúrate de tener una instancia de Postgres corriendo.
 3. **Ejecución**: `pnpm dev` para lanzar todas las apps en paralelo.
-
----
-
-### 📝 Nota sobre el Estado del Proyecto
-Actualmente, Planeat se encuentra en fase de desarrollo activo centrado en la implementación del CRUD de Recetas y la infraestructura base del Monorepo.
-
-*¿Tienes feedback o quieres ajustar el enfoque de alguna funcionalidad? Por favor, dímelo.*
