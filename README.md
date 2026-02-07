@@ -43,8 +43,7 @@ Este proyecto utiliza un **Monorepo** gestionado con **Turborepo** y **pnpm work
 
 1. **Instalación**: `pnpm install`
 2. **Base de Datos**: 
-   - Iniciar PostgreSQL: `docker compose up -d postgres`
-   - Copiar variables de entorno: `cp .env.example .env`
+   - Configura tu conexión a Supabase en las variables de entorno
    - Desde `packages/database`: 
      - `pnpm db:generate` - Generar cliente Prisma
      - `pnpm db:migrate` - Aplicar migraciones
@@ -57,6 +56,5 @@ El script de seeding incluye:
 - 5 recetas auténticas españolas (Tortilla de Patatas, Gazpacho, Paella, Ensalada Mixta, Pollo al Ajillo)
 - 17 ingredientes con precios reales de Mercadona y Carrefour
 - Usuario de prueba (`test@planeat.com`) con preferencias
-- Menú semanal de ejemplo
 
 Ver `packages/database/README.md` para más detalles.

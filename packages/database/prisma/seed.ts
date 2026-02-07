@@ -8,7 +8,6 @@ import { prisma } from '../src/index.js';
  * - Real ingredients with proper units
  * - Real product prices from Mercadona and Carrefour (as of 2026)
  * - Test user with preferences
- * - Sample weekly menu
  * 
  * Usage: pnpm db:seed (from packages/database directory)
  */
@@ -465,27 +464,6 @@ async function main() {
   console.log(`   ✓ Recipe created: ${polloAjillo.title}\n`);
 
   // ==========================================
-  // 4. CREATE A SAMPLE WEEKLY MENU
-  // ==========================================
-  console.log('📅 Creating sample weekly menu...');
-  const menu = await prisma.menu.create({
-    data: {
-      userId: testUser.id,
-      date: new Date('2026-02-10'),
-      recipes: {
-        connect: [
-          { id: tortilla.id },
-          { id: gazpacho.id },
-          { id: paella.id },
-          { id: ensalada.id },
-          { id: polloAjillo.id },
-        ],
-      },
-    },
-  });
-  console.log(`   ✓ Menu created for week of ${menu.date.toISOString().split('T')[0]}\n`);
-
-  // ==========================================
   // SUMMARY
   // ==========================================
   console.log('✅ Database seeding completed successfully!\n');
@@ -498,7 +476,6 @@ async function main() {
   console.log(`     - Paella Valenciana`);
   console.log(`     - Ensalada Mixta`);
   console.log(`     - Pollo al Ajillo`);
-  console.log(`   • 1 sample weekly menu`);
   console.log('\n🎉 Ready to use!');
 }
 

@@ -12,8 +12,9 @@ This package contains:
 
 ## Prerequisites
 
-- PostgreSQL database instance running
-- `DATABASE_URL` environment variable set (e.g., `postgresql://user:password@localhost:5432/planeat`)
+- PostgreSQL database instance (e.g., Supabase)
+- `DATABASE_URL` environment variable set to your PostgreSQL connection string
+- `DIRECT_URL` environment variable set (for migrations)
 
 ## Setup
 
@@ -51,7 +52,6 @@ This populates your database with:
   3. **Paella Valenciana** - Authentic Valencian rice dish
   4. **Ensalada Mixta** - Spanish mixed salad
   5. **Pollo al Ajillo** - Garlic chicken
-- **1 sample weekly menu** linking all recipes
 
 The seeding script is **idempotent** - you can run it multiple times safely. It uses `upsert` operations to avoid duplicates.
 
