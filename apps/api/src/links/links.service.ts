@@ -7,23 +7,29 @@ import * as escapeHtml from 'escape-html';
 export class LinksService {
   private readonly _links: Link[] = [
     {
-      id: 0,
+      id: '0',
       title: 'Installation',
       url: 'https://turborepo.dev/docs/getting-started/installation',
       description: 'Get started with Turborepo in a few moments using',
+      createdAt: new Date(),
+      updatedAt: new Date(),
     },
     {
-      id: 1,
+      id: '1',
       title: 'Crafting',
       url: 'https://turborepo.dev/docs/crafting-your-repository',
       description: 'Architecting a monorepo is a careful process.',
+      createdAt: new Date(),
+      updatedAt: new Date(),
     },
     {
-      id: 2,
+      id: '2',
       title: 'Add Repositories',
       url: 'https://turborepo.dev/docs/getting-started/add-to-existing-repository',
       description:
         'Turborepo can be incrementally adopted in any repository, single or multi-package, to speed up the developer and CI workflows of the repository.',
+      createdAt: new Date(),
+      updatedAt: new Date(),
     },
   ];
 
