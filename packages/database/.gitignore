@@ -3,3 +3,6 @@ node_modules
 .env
 
 /src/generated/prisma
+
+# Migrations are managed in Supabase
+/prisma/migrations/
