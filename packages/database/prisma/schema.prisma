@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String @id @default(cuid())
+  email        String @unique
+  preferences  Json?
+  weeklyBudget Float?
+  menus        Menu[]
+}
+
+model Recipe {
+  id           String             @id @default(cuid())
+  title        String
+  instructions String             @db.Text
+  imageUrl     String?
+  mealType     String
+  ingredients  RecipeIngredient[]
+  menu         Menu?              @relation(fields: [menuId], references: [id])
+  menuId       String?
+}
+
+model Ingredient {
+  id      String             @id @default(cuid())
+  name    String             @unique
+  unit    String
+  prices  ProductPrice[]
+  recipes RecipeIngredient[]
+}
+
+model RecipeIngredient {
+  id           String     @id @default(cuid())
+  recipeId     String
+  ingredientId String
+  amount       Float
+  recipe       Recipe     @relation(fields: [recipeId], references: [id])
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id])
+}
+
+model ProductPrice {
+  id           String     @id @default(cuid())
+  ingredientId String
+  supermarket  String
+  price        Float
+  lastUpdated  DateTime   @default(now())
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id])
+}
+
+model Menu {
+  id      String   @id @default(cuid())
+  userId  String
+  user    User     @relation(fields: [userId], references: [id])
+  date    DateTime
+  recipes Recipe[]
+}
