@@ -364,7 +364,7 @@ async function main() {
           { amount: 0.3, ingredientId: pepino.id },
           { amount: 0.2, ingredientId: pimiento.id },
           { amount: 0.1, ingredientId: cebolla.id },
-          { amount: 2, ingredientId: ajo.id },
+          { amount: 0.015, ingredientId: ajo.id },
           { amount: 0.1, ingredientId: aceiteOliva.id },
           { amount: 0.05, ingredientId: vinagre.id },
           { amount: 1, ingredientId: pan.id },
