@@ -1,5 +1,5 @@
 import { IsEmail, IsOptional, IsNumber, IsObject } from 'class-validator';
-import { UserPreferencesType } from 'schemas';
+import { UserPreferencesType } from '../../schemas';
 
 export class CreateUserDto {
   @IsEmail()
