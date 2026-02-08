@@ -42,5 +42,19 @@ Este proyecto utiliza un **Monorepo** gestionado con **Turborepo** y **pnpm work
 ## 🚀 Flujo de Desarrollo
 
 1. **Instalación**: `pnpm install`
-2. **Base de Datos**: `cd packages/database && pnpm db:generate` y asegúrate de tener una instancia de Postgres corriendo.
+2. **Base de Datos**: 
+   - Configura tu conexión a Supabase en las variables de entorno
+   - Desde `packages/database`: 
+     - `pnpm db:generate` - Generar cliente Prisma
+     - `pnpm db:migrate` - Aplicar migraciones
+     - `pnpm db:seed` - Poblar con datos de prueba (5 recetas españolas + precios reales)
 3. **Ejecución**: `pnpm dev` para lanzar todas las apps en paralelo.
+
+### 🌱 Datos de Prueba
+
+El script de seeding incluye:
+- 5 recetas auténticas españolas (Tortilla de Patatas, Gazpacho, Paella, Ensalada Mixta, Pollo al Ajillo)
+- 17 ingredientes con precios reales de Mercadona y Carrefour
+- Usuario de prueba (`test@planeat.com`) con preferencias
+
+Ver `packages/database/README.md` para más detalles.

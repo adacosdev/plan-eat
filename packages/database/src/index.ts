@@ -1,8 +1,8 @@
-import { PrismaClient } from "./generated/prisma";
+import { PrismaClient } from "./generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import pg from "pg";
 
-export * from "./generated/prisma";
+export * from "./generated/prisma/client";
 
 export const createPrismaClient = (connectionString: string) => {
   const pool = new pg.Pool({ connectionString });
@@ -14,5 +14,3 @@ export const createPrismaClient = (connectionString: string) => {
 const defaultPool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 const defaultAdapter = new PrismaPg(defaultPool);
 export const prisma = new PrismaClient({ adapter: defaultAdapter });
-
-export * from "./generated/prisma";
