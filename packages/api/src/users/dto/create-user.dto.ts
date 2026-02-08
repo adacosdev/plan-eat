@@ -1,4 +1,5 @@
 import { IsEmail, IsOptional, IsNumber, IsObject } from 'class-validator';
+import { UserPreferencesType } from 'schemas';
 
 export class CreateUserDto {
   @IsEmail()
@@ -6,7 +7,7 @@ export class CreateUserDto {
 
   @IsObject()
   @IsOptional()
-  preferences?: any;
+  preferences?: UserPreferencesType;
 
   @IsNumber()
   @IsOptional()
