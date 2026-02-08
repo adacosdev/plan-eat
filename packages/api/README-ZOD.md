@@ -20,12 +20,12 @@ Example:
 
 ```typescript
 export const RecipeSchema = z.object({
-  id: z.string().cuid(),
+  id: z.cuid(),
   title: z.string().min(1),
   instructions: z.string().min(1),
   imageUrl: z.string().url().optional().nullable(),
   mealType: z.string().min(1),
-  menuId: z.string().cuid().optional().nullable(),
+  menuId: z.cuid().optional().nullable(),
 });
 
 export type RecipeType = z.infer<typeof RecipeSchema>;
